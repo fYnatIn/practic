@@ -1,0 +1,14 @@
+<h1>Login </h1>
+<?php echo $this->escapeHtml($this->messages); ?>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('auth', array('action' => 'login')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('u_login'));
+echo "<br>";
+echo $this->formRow($form->get('u_pwd'));
+echo "<br>";
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

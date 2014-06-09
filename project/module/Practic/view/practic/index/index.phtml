@@ -1,0 +1,10 @@
+<?php
+    if ($user = $this->identity()) {
+        echo 'Logged in as "' . $this->escapeHtml($user->u_login) . '"';
+?>		
+ | <a href="<?php echo $this->url('auth', array('action' => 'logout'));?>"><?php echo $this->translate('Logout'); ?></a> 
+<?php
+    } else {
+        echo 'Not logged in';
+    }
+?>
